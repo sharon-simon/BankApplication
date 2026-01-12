@@ -42,6 +42,7 @@ namespace BankApplication
             Console.WriteLine("Enter your amount");
             double bal = double.Parse(Console.ReadLine());
             return bal;
+
         }
         public void Display(Account acc,String name)
         {
