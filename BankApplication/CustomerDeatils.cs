@@ -10,26 +10,18 @@ namespace BankApplication
         public long Phoneno;
         public byte Age;
         public double balance;
+        public int IFSC;
+        public int AccountNumber;
 
-        public CustomerDetails(string name,long phoneno,byte age,double balance)
+
+        public CustomerDetails(string name, long phoneno, byte age, double balance,int ifsc,int accno)
         {
-            Name=name;
-            Phoneno=phoneno;    
-            Age=age;
+            Name = name;
+            Phoneno = phoneno;
+            Age = age;
             this.balance = balance;
+            IFSC = ifsc;
+            AccountNumber = accno;
         }
-
-        //public void AddDetails(CustomerDetails c)
-        //{
-        //    customers.Add(c);
-        //}
-
-        //public void Display()
-        //{
-        //    foreach (var c in customers)
-        //    {
-        //        Console.WriteLine($"Name: {c.Name}, Phone: {c.Phoneno}, Age: {c.Age}");
-        //    }
-        //}
     }
 }

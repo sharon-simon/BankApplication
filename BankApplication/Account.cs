@@ -5,36 +5,32 @@ using System.Text;
 
 namespace BankApplication
 {
-     class Account
+    class Account
     {
         public List<CustomerDetails> customerlist;
-            public Account()
-            {
-            customerlist=new List<CustomerDetails>();
-            }
+        public Account()
+        {
+            customerlist = new List<CustomerDetails>();
+        }
         public void AddDetails(CustomerDetails customer)
         {
-            //customers = new List<CustomerDetails>();
             customerlist.Add(customer);
         }
         public string GetName()
         {
-            Console.WriteLine("Enter your name");
-            //String name= Console.ReadLine();
-           
+            Console.WriteLine("Enter your name");           
             return Console.ReadLine();
-
         }
         public long GetPhone()
         {
             Console.WriteLine("Enter your phone number");
-            long pno=long.Parse(Console.ReadLine());
+            long pno = long.Parse(Console.ReadLine());
             return pno;
         }
         public byte GetAge()
         {
             Console.WriteLine("Enter your age");
-            byte age=byte.Parse(Console.ReadLine());
+            byte age = byte.Parse(Console.ReadLine());
             return age;
         }
         public double GetBal()
@@ -44,18 +40,24 @@ namespace BankApplication
             return bal;
 
         }
-        public void Display(Account acc,String name)
+        public int GetIF()
         {
-            CustomerDetails customer = acc.customerlist.FirstOrDefault(c => c.Name == name);
-
-            if (customer != null)
+            Console.WriteLine("Enter your IFSC code");
+            int ifsc = int.Parse(Console.ReadLine());
+            return ifsc;
+        }
+        public int GetAccNo()
+        {
+            Console.WriteLine("Enter your account number");
+            int accno = int.Parse(Console.ReadLine());
+            return accno;
+        }
+        public void Display(Account acc)
+        {
+            foreach (var c in customerlist)
             {
-                foreach (var c in customerlist)
-                {
-                    Console.WriteLine($"Name: {c.Name}, Phone: {c.Phoneno}, Age: {c.Age},Balace:{c.balance}");
-                }
+                Console.WriteLine($"Name: {c.Name}, Phone: {c.Phoneno}, Age: {c.Age},Balace:{c.balance}");
             }
-            
         }
     }
 }
